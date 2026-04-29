@@ -1,0 +1,19 @@
+# Internal business strategy — not for public repo
+STRATEGY.md
+
+# OS / editor
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+*~
+.idea/
+.vscode/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Env
+.env
+.env.local
