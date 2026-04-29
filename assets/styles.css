@@ -255,7 +255,11 @@ section[id], main [id] { scroll-margin-top: 110px; }
   position: absolute;
   inset: 0;
   z-index: -2;
-  background-image: url("hero.png");
+  background-image: url("hero.jpg"); /* fallback */
+  background-image: image-set(
+    url("hero.webp") type("image/webp"),
+    url("hero.jpg") type("image/jpeg")
+  );
   background-size: cover;
   background-position: center 30%;
   filter: brightness(0.85) contrast(1.05) saturate(1.05);
