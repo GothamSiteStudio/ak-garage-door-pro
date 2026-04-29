@@ -35,7 +35,7 @@ python -m http.server 8000
 ## Deploy
 
 Drop the folder on Netlify, Vercel, or Cloudflare Pages — no build needed.
-For a custom domain, point the apex (`akgaragedoorpro.com`) at the static host.
+For a custom domain, point the apex (`akgaragedoorsservices.com`) at the static host.
 
 ## Contact
 
