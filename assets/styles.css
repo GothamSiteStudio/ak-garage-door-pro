@@ -1255,9 +1255,25 @@ section:nth-of-type(even) { background: var(--bg-section); }
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 10px 24px;
   font-size: 13px;
   color: rgba(255,255,255,0.55);
+}
+.footer-bottom .credit {
+  color: rgba(255,255,255,0.6);
+}
+.footer-bottom .credit a {
+  color: var(--cyan-bright);
+  font-weight: 700;
+  padding: 0;
+  min-height: auto;
+  display: inline;
+  border-bottom: 1px solid transparent;
+  transition: border-color .15s, color .15s;
+}
+.footer-bottom .credit a:hover {
+  border-bottom-color: var(--cyan-bright);
+  text-decoration: none;
 }
 
 /* ===== NEW: Live status widget (floating, bottom-right desktop) ===== */
