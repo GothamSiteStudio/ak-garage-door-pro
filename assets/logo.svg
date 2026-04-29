@@ -1,56 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 110" role="img" aria-label="AK Garage Door Pro">
   <title>AK Garage Door Pro</title>
-
   <defs>
     <linearGradient id="cyanGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#1cdfff"/>
-      <stop offset="55%" stop-color="#00d4ff"/>
-      <stop offset="100%" stop-color="#4f7cff"/>
-    </linearGradient>
-    <linearGradient id="cyanFade" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#00d4ff" stop-opacity="0.35"/>
-      <stop offset="100%" stop-color="#4f7cff" stop-opacity="0.05"/>
+      <stop offset="0%" stop-color="#0ad4f0"/>
+      <stop offset="55%" stop-color="#06b6d4"/>
+      <stop offset="100%" stop-color="#0066ff"/>
     </linearGradient>
   </defs>
 
-  <!-- Hexagonal icon -->
+  <!-- Hex icon — light fill on white BG, cyan stroke -->
   <g transform="translate(6, 5)">
-    <!-- Outer hex with cyan gradient stroke -->
     <polygon points="50,2 92,26 92,74 50,98 8,74 8,26"
-             fill="#0a0f24" stroke="url(#cyanGrad)" stroke-width="2.5" stroke-linejoin="round"/>
-    <!-- Inner hex line for depth -->
+             fill="#ffffff" stroke="url(#cyanGrad)" stroke-width="2.5" stroke-linejoin="round"/>
     <polygon points="50,9 84,31 84,69 50,91 16,69 16,31"
-             fill="none" stroke="#00d4ff" stroke-width="0.8" opacity="0.35"/>
-    <!-- Garage door body -->
+             fill="none" stroke="#06b6d4" stroke-width="0.8" opacity="0.4"/>
     <rect x="28" y="32" width="44" height="44" rx="2" fill="url(#cyanGrad)"/>
-    <!-- Panel lines -->
-    <line x1="28" y1="44" x2="72" y2="44" stroke="#0a0f24" stroke-width="1.5"/>
-    <line x1="28" y1="55" x2="72" y2="55" stroke="#0a0f24" stroke-width="1.5"/>
-    <line x1="28" y1="66" x2="72" y2="66" stroke="#0a0f24" stroke-width="1.5"/>
-    <!-- Top window strip (cut-outs) -->
-    <rect x="32" y="35" width="36" height="6" fill="#0a0f24"/>
-    <line x1="41" y1="35" x2="41" y2="41" stroke="#1cdfff" stroke-width="0.9"/>
-    <line x1="50" y1="35" x2="50" y2="41" stroke="#1cdfff" stroke-width="0.9"/>
-    <line x1="59" y1="35" x2="59" y2="41" stroke="#1cdfff" stroke-width="0.9"/>
+    <line x1="28" y1="44" x2="72" y2="44" stroke="#ffffff" stroke-width="1.5"/>
+    <line x1="28" y1="55" x2="72" y2="55" stroke="#ffffff" stroke-width="1.5"/>
+    <line x1="28" y1="66" x2="72" y2="66" stroke="#ffffff" stroke-width="1.5"/>
+    <rect x="32" y="35" width="36" height="6" fill="#ffffff"/>
+    <line x1="41" y1="35" x2="41" y2="41" stroke="#06b6d4" stroke-width="0.9"/>
+    <line x1="50" y1="35" x2="50" y2="41" stroke="#06b6d4" stroke-width="0.9"/>
+    <line x1="59" y1="35" x2="59" y2="41" stroke="#06b6d4" stroke-width="0.9"/>
   </g>
 
-  <!-- Wordmark -->
+  <!-- Wordmark in dark navy on white -->
   <g transform="translate(118, 0)">
-    <!-- AK GARAGE DOOR -->
     <text x="0" y="55"
           font-family="'SF Pro Display', 'Helvetica Neue', Arial, sans-serif"
-          font-size="36" font-weight="800" fill="#ffffff"
-          letter-spacing="-0.5">AK GARAGE DOOR</text>
-
-    <!-- Decorative cyan underline -->
-    <line x1="0" y1="68" x2="288" y2="68" stroke="url(#cyanFade)" stroke-width="1"/>
-
-    <!-- PRO badge -->
+          font-size="36" font-weight="800" fill="#0a1530" letter-spacing="-0.5">AK GARAGE DOOR</text>
+    <line x1="0" y1="68" x2="288" y2="68" stroke="#06b6d4" stroke-width="1" opacity="0.45"/>
     <rect x="0" y="76" width="92" height="26" rx="4" fill="url(#cyanGrad)"/>
     <text x="46" y="95"
           font-family="'SF Pro Display', 'Helvetica Neue', Arial, sans-serif"
-          font-size="17" font-weight="800" fill="#0a0f24"
+          font-size="17" font-weight="800" fill="#ffffff"
           text-anchor="middle" letter-spacing="6">PRO</text>
   </g>
 </svg>
