@@ -146,6 +146,28 @@
   _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
   _paq.push(["setCookieDomain", "*.akgaragedoorsservices.com"]);
   _paq.push(["setDomains", ["*.akgaragedoorsservices.com"]]);
+
+  /* === Push UTM Custom Dimensions on landing (idSite 16) ===
+     1=UTM Source, 2=UTM Medium, 3=UTM Campaign, 4=UTM Content, 5=Lead Phone */
+  (function () {
+    try {
+      var qp = new URLSearchParams(window.location.search);
+      var map = { 1: 'utm_source', 2: 'utm_medium', 3: 'utm_campaign', 4: 'utm_content' };
+      Object.keys(map).forEach(function (id) {
+        var v = qp.get(map[id]);
+        if (v) {
+          _paq.push(['setCustomDimension', Number(id), v]);
+          try { sessionStorage.setItem('mtm_' + map[id], v); } catch (e) {}
+        } else {
+          try {
+            var saved = sessionStorage.getItem('mtm_' + map[id]);
+            if (saved) _paq.push(['setCustomDimension', Number(id), saved]);
+          } catch (e) {}
+        }
+      });
+    } catch (e) {}
+  })();
+
   _paq.push(['trackPageView']);
   _paq.push(['enableLinkTracking']);
   (function() {
@@ -367,6 +389,15 @@
           <option>Other / not sure</option>
         </select>
         <p class="field-error" id="err-service" role="alert">Please choose a service.</p>
+
+        <!-- Hidden tracking fields, populated by Matomo JS so leads can be linked to sessions -->
+        <input type="hidden" name="matomo_visitor_id" id="f-mtm-vid" />
+        <input type="hidden" name="matomo_utm_source" id="f-mtm-source" />
+        <input type="hidden" name="matomo_utm_medium" id="f-mtm-medium" />
+        <input type="hidden" name="matomo_utm_campaign" id="f-mtm-campaign" />
+        <input type="hidden" name="matomo_utm_content" id="f-mtm-content" />
+        <input type="hidden" name="matomo_landing_page" id="f-mtm-landing" />
+        <input type="hidden" name="matomo_referrer" id="f-mtm-ref" />
 
         <button type="submit" class="btn btn-primary">Get My Free Quote &rarr;</button>
         <p class="form-foot" id="form-foot">
@@ -1060,6 +1091,27 @@
     closeBtn.addEventListener('click', () => liveWidget.classList.add('is-hidden'));
   }
 
+  // ===== Matomo: populate hidden tracking fields on the lead form =====
+  (function () {
+    function setVal(id, v) { var el = document.getElementById(id); if (el && v) el.value = v; }
+    function getQp(name) { try { return new URLSearchParams(location.search).get(name) || sessionStorage.getItem('mtm_' + name) || ''; } catch (e) { return ''; } }
+
+    // Static fields available immediately
+    setVal('f-mtm-source',   getQp('utm_source'));
+    setVal('f-mtm-medium',   getQp('utm_medium'));
+    setVal('f-mtm-campaign', getQp('utm_campaign'));
+    setVal('f-mtm-content',  getQp('utm_content'));
+    setVal('f-mtm-landing',  location.pathname + location.search);
+    setVal('f-mtm-ref',      document.referrer || '');
+
+    // Visitor ID needs Matomo to be loaded — push a callback
+    if (window._paq) {
+      _paq.push([function () {
+        try { setVal('f-mtm-vid', this.getVisitorId()); } catch (e) {}
+      }]);
+    }
+  })();
+
   // ===== Lead form: accessible client-side validation =====
   const form = document.getElementById('lead-form');
   const success = document.getElementById('form-success');
@@ -1102,6 +1154,19 @@
     } else { showError(service, 'err-service', null); }
 
     if (firstInvalid) { firstInvalid.focus(); return; }
+
+    // Push the lead's phone to Matomo so we can find this exact session later.
+    // Custom Dimension 5 = Lead Phone. Also fire a tracked goal event.
+    var phoneClean = phone.value.replace(/\D/g, '');
+    if (window._paq) {
+      _paq.push(['setUserId', phoneClean]);
+      _paq.push(['setCustomDimension', 5, phoneClean]);
+      _paq.push(['trackEvent', 'Lead', 'Form Submit', service.value, 1]);
+      // Refresh visitor ID into hidden field one more time post-submit
+      _paq.push([function () {
+        try { document.getElementById('f-mtm-vid').value = this.getVisitorId(); } catch (e) {}
+      }]);
+    }
 
     // Replace this with your real form endpoint (Formspree, Netlify, custom).
     // Demo behavior: hide form fields, show success message.
