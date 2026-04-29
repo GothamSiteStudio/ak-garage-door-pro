@@ -204,99 +204,37 @@
 
 <main id="main" tabindex="-1">
 
-<!-- ============== HERO ============== -->
+<!-- ============== HERO (dark, photo backdrop) ============== -->
 <section class="hero" aria-labelledby="hero-h1">
+  <div class="hero-bg" aria-hidden="true"></div>
   <div class="container">
-    <div class="hero-grid">
-      <div>
-        <span class="hero-availability" role="status" aria-live="polite">
-          Technicians available now across MA · NH · ME
-        </span>
+    <div class="hero-content">
+      <span class="hero-rating">
+        <span class="stars" aria-hidden="true">★★★★★</span>
+        <span><strong>5.0</strong> Rating · Verified Google Reviews</span>
+      </span>
 
-        <span class="hero-rating">
-          <span class="g-badge">G</span>
-          <span class="stars" aria-hidden="true">★★★★★</span>
-          <span><strong>5.0</strong> on Google &middot; Verified reviews</span>
-        </span>
+      <h1 id="hero-h1">
+        Garage Door Repair &amp; Installation <span class="accent">Across MA, NH &amp; ME</span>
+      </h1>
 
-        <h1 id="hero-h1">
-          Same-Day <span class="accent">Garage Door Repair</span> Across Massachusetts, New Hampshire &amp; Maine
-        </h1>
+      <ul class="hero-features" aria-label="Service highlights">
+        <li>Same-day &amp; emergency service available 7 days a week</li>
+        <li>Free, upfront quotes — no surprises</li>
+        <li>Workmanship warranty on all parts and labor</li>
+        <li>Technicians arrive within 90 minutes</li>
+      </ul>
 
-        <p class="hero-sub">
-          Licensed, insured, family-owned. Most repairs done in under an hour —
-          springs, openers, cables, panels, and full installations. Free, honest estimates.
-          No overtime fees, ever.
-        </p>
-
-        <div class="hero-ctas">
-          <a href="tel:+18574681852" class="btn btn-call" aria-label="Call us now at 857-468-1852">
-            <span aria-hidden="true">📞</span> Call (857) 468-1852
-          </a>
-          <a href="#quote" class="btn btn-outline">Or get a free quote &rarr;</a>
-        </div>
-
-        <ul class="hero-features" aria-label="Service highlights">
-          <li>Same-day service, 7 days a week</li>
-          <li>Licensed &amp; insured in MA</li>
-          <li>Free, upfront estimates</li>
-          <li>Lifetime warranty on springs</li>
-          <li>LiftMaster &amp; Clopay authorized</li>
-          <li>Family-owned &amp; locally operated</li>
-        </ul>
+      <div class="hero-ctas">
+        <a href="tel:+18574681852" class="btn btn-call" aria-label="Call us now at 857-468-1852">
+          <span aria-hidden="true">📞</span> Call (857) 468-1852
+        </a>
+        <a href="#quote" class="btn btn-outline-light">Free Estimate &rarr;</a>
       </div>
 
-      <section class="lead-card" id="quote" aria-labelledby="quote-h3">
-        <h3 id="quote-h3">Get a Free Quote — In 60 Seconds</h3>
-        <p class="small">We'll text you back within 15 minutes during business hours.</p>
-        <form id="lead-form"
-              action="https://formspree.io/f/your-form-id"
-              method="POST"
-              aria-describedby="form-foot"
-              novalidate>
-          <label for="f-name">Full name</label>
-          <input id="f-name" name="name" type="text"
-                 autocomplete="name"
-                 placeholder="John Smith"
-                 aria-required="true" required />
-          <p class="field-error" id="err-name" role="alert">Please enter your name.</p>
-
-          <label for="f-phone">Phone number</label>
-          <input id="f-phone" name="phone" type="tel"
-                 autocomplete="tel"
-                 inputmode="tel"
-                 placeholder="(617) 555-0123"
-                 aria-describedby="hint-phone"
-                 aria-required="true" required />
-          <span class="field-hint" id="hint-phone">We'll only use this to text you back about your quote.</span>
-          <p class="field-error" id="err-phone" role="alert">Please enter a valid phone number.</p>
-
-          <label for="f-service">What do you need help with?</label>
-          <select id="f-service" name="service" aria-required="true" required>
-            <option value="">Choose a service…</option>
-            <option>Broken spring</option>
-            <option>Door won't open / close</option>
-            <option>Off-track door</option>
-            <option>Opener repair / replacement</option>
-            <option>Cable repair</option>
-            <option>Panel replacement</option>
-            <option>New door installation</option>
-            <option>Tune-up &amp; inspection</option>
-            <option>Other / not sure</option>
-          </select>
-          <p class="field-error" id="err-service" role="alert">Please choose a service.</p>
-
-          <button type="submit" class="btn btn-primary">Get My Free Quote &rarr;</button>
-          <p class="form-foot" id="form-foot">
-            By submitting you agree to be contacted about your quote. We never spam or sell your info.<br />
-            Prefer to call? <a href="tel:+18574681852"><strong>(857) 468-1852</strong></a>
-          </p>
-          <div id="form-success" hidden role="status" aria-live="polite"
-               style="background:#d1fae5;color:#065f46;padding:14px;border-radius:8px;font-weight:600;text-align:center;margin-top:12px;">
-            Thanks! We'll be in touch within 15 minutes.
-          </div>
-        </form>
-      </section>
+      <span class="hero-availability" role="status" aria-live="polite">
+        Technicians available now across MA · NH · ME
+      </span>
     </div>
   </div>
 </section>
@@ -372,6 +310,74 @@
         <h3>Tune-Up &amp; Maintenance</h3>
         <p>25-point inspection, lubrication, balance check, weather seal. Recommended once a year — extends door life by 5+ years.</p>
       </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============== QUOTE FORM SECTION ============== -->
+<section class="quote-section" id="quote" aria-labelledby="quote-h2">
+  <div class="container quote-grid">
+    <div class="quote-intro">
+      <span class="eyebrow">Free Estimate</span>
+      <h2 id="quote-h2">Tell Us What's Going On — We'll Text You Back Fast.</h2>
+      <p>No-pressure, no-obligation quote. We typically reply within 15 minutes during business hours, and we can usually have a tech at your home the same day.</p>
+      <ul class="quote-bullets">
+        <li>Free, upfront quote before any work</li>
+        <li>Honest answer in plain English — no jargon</li>
+        <li>Or call us directly: <a href="tel:+18574681852"><strong>(857) 468-1852</strong></a></li>
+      </ul>
+    </div>
+
+    <div class="lead-card" aria-labelledby="quote-h3">
+      <h3 id="quote-h3">Get Your Free Quote</h3>
+      <p class="small">Takes 60 seconds. We'll text you back within 15 minutes.</p>
+      <form id="lead-form"
+            action="https://formspree.io/f/your-form-id"
+            method="POST"
+            aria-describedby="form-foot"
+            novalidate>
+        <label for="f-name">Full name</label>
+        <input id="f-name" name="name" type="text"
+               autocomplete="name"
+               placeholder="John Smith"
+               aria-required="true" required />
+        <p class="field-error" id="err-name" role="alert">Please enter your name.</p>
+
+        <label for="f-phone">Phone number</label>
+        <input id="f-phone" name="phone" type="tel"
+               autocomplete="tel"
+               inputmode="tel"
+               placeholder="(617) 555-0123"
+               aria-describedby="hint-phone"
+               aria-required="true" required />
+        <span class="field-hint" id="hint-phone">We'll only use this to text you back about your quote.</span>
+        <p class="field-error" id="err-phone" role="alert">Please enter a valid phone number.</p>
+
+        <label for="f-service">What do you need help with?</label>
+        <select id="f-service" name="service" aria-required="true" required>
+          <option value="">Choose a service…</option>
+          <option>Broken spring</option>
+          <option>Door won't open / close</option>
+          <option>Off-track door</option>
+          <option>Opener repair / replacement</option>
+          <option>Cable repair</option>
+          <option>Panel replacement</option>
+          <option>New door installation</option>
+          <option>Tune-up &amp; inspection</option>
+          <option>Other / not sure</option>
+        </select>
+        <p class="field-error" id="err-service" role="alert">Please choose a service.</p>
+
+        <button type="submit" class="btn btn-primary">Get My Free Quote &rarr;</button>
+        <p class="form-foot" id="form-foot">
+          By submitting you agree to be contacted about your quote. We never spam or sell your info.<br />
+          Prefer to call? <a href="tel:+18574681852"><strong>(857) 468-1852</strong></a>
+        </p>
+        <div id="form-success" hidden role="status" aria-live="polite"
+             style="background:#d1fae5;color:#065f46;padding:14px;border-radius:8px;font-weight:600;text-align:center;margin-top:12px;">
+          Thanks! We'll be in touch within 15 minutes.
+        </div>
+      </form>
     </div>
   </div>
 </section>
@@ -612,35 +618,35 @@
           <p class="region-name">Waltham Coverage Hub</p>
           <span class="region-count">27 cities</span>
         </div>
-        <ul>
-          <li>Arlington</li>
-          <li>Belmont</li>
-          <li>Boston</li>
-          <li>Braintree</li>
-          <li>Brookline</li>
-          <li>Burlington</li>
-          <li>Cambridge</li>
-          <li>Dedham</li>
-          <li>Framingham</li>
-          <li>Lexington</li>
-          <li>Lowell</li>
-          <li>Malden</li>
-          <li>Medford</li>
-          <li>Milton</li>
-          <li>Natick</li>
-          <li>Newton</li>
-          <li>Quincy</li>
-          <li>Somerville</li>
-          <li>Springfield</li>
-          <li>Waltham</li>
-          <li>Watertown</li>
-          <li>Wellesley</li>
-          <li>Weston</li>
-          <li>Weymouth</li>
-          <li>Winchester</li>
-          <li>Woburn</li>
-          <li>Worcester</li>
-        </ul>
+        <div class="city-chips">
+          <span class="city-chip">Arlington</span>
+          <span class="city-chip">Belmont</span>
+          <span class="city-chip">Boston</span>
+          <span class="city-chip">Braintree</span>
+          <span class="city-chip">Brookline</span>
+          <span class="city-chip">Burlington</span>
+          <span class="city-chip">Cambridge</span>
+          <span class="city-chip">Dedham</span>
+          <span class="city-chip">Framingham</span>
+          <span class="city-chip">Lexington</span>
+          <span class="city-chip">Lowell</span>
+          <span class="city-chip">Malden</span>
+          <span class="city-chip">Medford</span>
+          <span class="city-chip">Milton</span>
+          <span class="city-chip">Natick</span>
+          <span class="city-chip">Newton</span>
+          <span class="city-chip">Quincy</span>
+          <span class="city-chip">Somerville</span>
+          <span class="city-chip">Springfield</span>
+          <span class="city-chip">Waltham</span>
+          <span class="city-chip">Watertown</span>
+          <span class="city-chip">Wellesley</span>
+          <span class="city-chip">Weston</span>
+          <span class="city-chip">Weymouth</span>
+          <span class="city-chip">Winchester</span>
+          <span class="city-chip">Woburn</span>
+          <span class="city-chip">Worcester</span>
+        </div>
       </div>
 
       <div class="area-region">
@@ -649,18 +655,18 @@
           <p class="region-name">Bellingham Coverage Hub</p>
           <span class="region-count">10 cities</span>
         </div>
-        <ul>
-          <li>Bellingham</li>
-          <li>Foxborough</li>
-          <li>Franklin</li>
-          <li>Medway</li>
-          <li>Milford</li>
-          <li>Millis</li>
-          <li>Norwood</li>
-          <li>Plainville</li>
-          <li>Walpole</li>
-          <li>Wrentham</li>
-        </ul>
+        <div class="city-chips">
+          <span class="city-chip">Bellingham</span>
+          <span class="city-chip">Foxborough</span>
+          <span class="city-chip">Franklin</span>
+          <span class="city-chip">Medway</span>
+          <span class="city-chip">Milford</span>
+          <span class="city-chip">Millis</span>
+          <span class="city-chip">Norwood</span>
+          <span class="city-chip">Plainville</span>
+          <span class="city-chip">Walpole</span>
+          <span class="city-chip">Wrentham</span>
+        </div>
       </div>
 
       <div class="area-region">
@@ -669,26 +675,26 @@
           <p class="region-name">Bedford, NH Coverage Hub</p>
           <span class="region-count">18 cities</span>
         </div>
-        <ul>
-          <li>Amherst</li>
-          <li>Bedford</li>
-          <li>Brookline NH</li>
-          <li>Derry</li>
-          <li>Dunbarton</li>
-          <li>Goffstown</li>
-          <li>Hollis</li>
-          <li>Hudson</li>
-          <li>Londonderry</li>
-          <li>Lyndeborough</li>
-          <li>Manchester</li>
-          <li>Merrimack</li>
-          <li>Milford NH</li>
-          <li>Mont Vernon</li>
-          <li>Nashua</li>
-          <li>New Boston</li>
-          <li>Portsmouth</li>
-          <li>Salem</li>
-        </ul>
+        <div class="city-chips">
+          <span class="city-chip">Amherst</span>
+          <span class="city-chip">Bedford</span>
+          <span class="city-chip">Brookline NH</span>
+          <span class="city-chip">Derry</span>
+          <span class="city-chip">Dunbarton</span>
+          <span class="city-chip">Goffstown</span>
+          <span class="city-chip">Hollis</span>
+          <span class="city-chip">Hudson</span>
+          <span class="city-chip">Londonderry</span>
+          <span class="city-chip">Lyndeborough</span>
+          <span class="city-chip">Manchester</span>
+          <span class="city-chip">Merrimack</span>
+          <span class="city-chip">Milford NH</span>
+          <span class="city-chip">Mont Vernon</span>
+          <span class="city-chip">Nashua</span>
+          <span class="city-chip">New Boston</span>
+          <span class="city-chip">Portsmouth</span>
+          <span class="city-chip">Salem</span>
+        </div>
       </div>
     </div>
 
